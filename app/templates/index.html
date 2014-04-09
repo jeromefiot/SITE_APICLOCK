@@ -1,0 +1,26 @@
+{% extends "BASE.html" %}
+
+    {% block content %}
+        Accueil
+        <hr/>
+        Welcome on Apiclock board !<br/>
+        Vous trouverez ici des bouts de codes, explications script python pour faire un :<br/>
+        <strong>RADIO REVEIL sur la base d'un RASPBERRY PI</strong><br/>
+        (Evolutif, Design, webapp... <a href="{{ url_for('presentation') }}" >en savoir plus</a>)
+<br/><br/><br/>
+
+        Alors si vous souhaitez : <br/>
+        --------------------<br/>
+
+        Apporter votre connaissance / savoir faire au projet <br/>
+        (et ainsi faire peut être parti des betatesteurs : 2 APICLOCK à gagner)<br/>
+        <a href="{{ url_for('login') }}" >Participer</a>
+        <br/><br/><br/>
+        --------------------<br/>
+
+        Etre prévenu lors de sa sortie <br/>
+        (et ainsi peut être gagner un APICLOCK si vous tweeter ce message)<br/>
+        <a href="{{ url_for('login') }}" >Particper</a>
+
+
+    {% endblock %}

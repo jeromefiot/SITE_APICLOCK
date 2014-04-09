@@ -1,0 +1,8 @@
+# Ignorer fichiers pic, sqlite, cfg
+# et le dossier /static
+*.pyc
+*.sqlite
+*.cfg
+static/
+*.txt
+local_config.py

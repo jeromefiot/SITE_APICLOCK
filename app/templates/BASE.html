@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+    <title>Apiclock - {{ title }}</title>
+    {% else %}
+    <title>Apiclock</title>
+    {% endif %}
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+        <li><a href="{{ url_for('login') }}">Participer</a></li>
+    </ul>
+</nav>
+
+    {% block content %}{% endblock %}
+
+<footer>
+    <hr/>
+</footer>
+
+</body>
+</html>

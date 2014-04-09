@@ -1,0 +1,55 @@
+{% extends "BASE.html" %}
+
+    {% block content %}
+    <script type="text/javascript">
+    function set_openid(openid, pr)
+    {
+        u = openid.search('<username>')
+        if (u != -1) {
+            // openid requires username
+            user = prompt('Enter your ' + pr + ' username:')
+            openid = openid.substr(0, u) + user
+        }
+        form = document.forms['login'];
+        form.elements['openid'].value = openid
+    }
+    </script>
+
+    Inscription / Identification
+    <hr/>
+
+    <form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+
+        <p>Email : {{ form.email(size=50) }} <br/>
+        {% for error in form.errors.email %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        </p>
+
+        <p>Pseudo : {{ form.pseudo(size=50) }} <br/>
+        {% for error in form.errors.pseudo %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        </p>
+
+        <p>OpenID : {{ form.openid(size=80) }} <br/>
+        {% for error in form.errors.openid %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        |{% for pr in providers %}
+        <a href="javascript:set_openid('{{pr.url}}', '{{pr.name}}');">{{pr.name}}</a> |
+        {% endfor %}
+        </p>
+
+        <p>Agree : {{ form.agree }} <br/></p>
+        {% for error in form.errors.agree %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+
+        <p>Se souvenir : {{ form.remember_me }} <br/></p>
+        <p><input type="submit" value="Sign In"></p>
+
+    </form>
+
+    {% endblock %}
