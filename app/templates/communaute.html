@@ -1,0 +1,12 @@
+{% extends "BASE.html" %}
+
+{% block content %}
+
+    La communauté "Apiclock"
+    <hr/>
+
+    {% for membre in user %}
+        {{ membre.pseudo }}
+    {% endfor %}
+
+{% endblock %}

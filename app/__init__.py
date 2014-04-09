@@ -9,11 +9,11 @@ from flask.ext.openid import OpenID
 from local_config import basedir
 
 app = Flask(__name__)
-from app import views
-
 app.config.from_object('local_config')
-
 db = SQLAlchemy(app)
+
+from app import views, models
+
 
 lm = LoginManager()
 lm.init_app(app)

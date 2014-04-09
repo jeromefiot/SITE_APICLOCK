@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from app import app
+from app import app, models
 from flask import render_template, flash, redirect, session, url_for
 from forms import LoginForm
 
@@ -17,6 +17,16 @@ def presentation():
 
     return render_template("apiclock_presentation.html",
                            title=title)
+
+
+@app.route('/communaute')
+def communaute():
+    title="Communaute Apiclock"
+
+    user = models.User.query.all()
+    return render_template("communaute.html",
+                           title=title,
+                           user = user)
 
 
 @app.route('/login',methods=['POST', 'GET'])
