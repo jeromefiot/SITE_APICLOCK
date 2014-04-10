@@ -64,6 +64,14 @@ def avancement():
                            title=title)
 
 
+@app.route('/team')
+def team():
+    title="Team Apiclock"
+
+    return render_template("team.html",
+                           title=title)
+
+
 @app.route('/login',methods=['POST', 'GET'])
 @oid.loginhandler
 def login():

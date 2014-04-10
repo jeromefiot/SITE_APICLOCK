@@ -18,6 +18,7 @@
         <a href="{{ url_for('presentation') }}">Presentation</a>
         <a href="{{ url_for('avancement') }}">Avancement</a>
         <a href="{{ url_for('commande') }}">Commander</a>
+        <a href="{{ url_for('team') }}">L'équipe</a>
 
     {% if not g.user.is_authenticated() %}
         <a href="{{ url_for('login') }}">Participer</a>
