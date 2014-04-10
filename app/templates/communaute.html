@@ -6,7 +6,7 @@
     <hr/>
 
     {% for membre in user %}
-        {{ membre.nickname }}
+        >  <a href="/user/{{ membre.nickname }}">{{ membre.nickname }}</a> <br/>
     {% endfor %}
 
 {% endblock %}

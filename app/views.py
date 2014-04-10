@@ -138,7 +138,7 @@ def edit():
         db.session.commit()
         # on prévient que c'est fait et on met à jour
         flash('Infos mises a jour')
-        redirect(url_for('edit'))
+        return redirect(url_for('user', nickname=g.user.nickname))
 
     else:
         # on récup les infos depuis g.user et on remplit le formulaire avec

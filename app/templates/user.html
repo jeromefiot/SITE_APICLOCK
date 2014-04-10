@@ -7,7 +7,7 @@
             <td><img src="{{user.avatar(80)}}"></td>
             <td>
                 <h1>{{user.nickname}}</h1>
-                A propos : {% if user.about_me %}{{ user.about_me }}{% endif %} <br/>
+                <em>{% if user.about_me %}{{ user.about_me }}{% endif %} </em><br/>
 
                 {% if user.last_seen %}<em>Vu le : {{ momentjs(user.last_seen).calendar() }}</em>
                 {% endif %}<br/>
