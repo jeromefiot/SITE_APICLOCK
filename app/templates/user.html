@@ -6,12 +6,16 @@
         <tr valign="top">
             <td><img src="{{user.avatar(80)}}"></td>
             <td>
-                <h1>User: {{user.nickname}}</h1>
-                {% if user.about_me %}{{user.about_me}}{% endif %}
-                {% if user.last_seen %}{{user.last_seen}}{% endif %}
+                <h1>{{user.nickname}}</h1>
+                A propos : {% if user.about_me %}{{ user.about_me }}{% endif %} <br/>
+                Vu le : {% if user.last_seen %}{{ user.last_seen }}{% endif %}<br/>
+                Twitter : {% if user.tweeter %}<a href="https://twitter.com/{{ user.tweeter }}" target="_blank">
+                {{ user.tweeter }}</a> {% endif %}<br/>
+
+                {% if user.messages %} Nbr messages : {{ user.messages.count() }} {% endif %}
+                {% if user.id == g.user.id %}<p><a href="{{url_for('edit')}}">Editer</a></p>{% endif %}
             </td>
         </tr>
     </table>
-    <hr>
 
     {% endblock %}

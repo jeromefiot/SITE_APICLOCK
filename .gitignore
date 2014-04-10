@@ -3,6 +3,5 @@
 *.pyc
 *.sqlite
 *.cfg
-static/
 *.txt
 local_config.py

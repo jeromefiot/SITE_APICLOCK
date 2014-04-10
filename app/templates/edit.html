@@ -1,0 +1,34 @@
+{% extends "BASE.html" %}
+
+    {% block content %}
+
+    <h1>Mettre à jour votre compte</h1>
+
+    <form action="" method="post" name="edit">
+    {{ form.hidden_tag() }}
+
+        <table>
+            <tr>
+                <td rowspan="3"><img src="{{g.user.avatar(120)}}"></td>
+                <td>Votre Pseudo :</td>
+                <td>{{ form.nickname(size=44) }}
+
+                {% for error in form.errors.nickname %}
+                    <br><span style="color: red;">[{{error}}]</span>
+                {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Votre Tweeter :</td>
+                <td>{{ form.tweeter(size=44) }}</td>
+            </tr>
+            <tr>
+                <td>A propos de vous :</td>
+                <td>{{ form.about_me(cols = 32, rows = 4) }}</td>
+                <td rowspan="3" ><input type="submit" value="Mettre à jour"></td>
+            </tr>
+        </table>
+
+    </form>
+
+    {% endblock %}

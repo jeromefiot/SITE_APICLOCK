@@ -13,6 +13,7 @@ class User(db.Model):
     email = db.Column(db.String(120), index = True, unique = True)
     role = db.Column(db.SmallInteger, default = ROLE_USER)
     prevenu = db.Column(db.Boolean, default = False)
+    tweeter = db.Column(db.String(40), default = '', unique = True)
     tweet = db.Column(db.Boolean, default = False)
     messages = db.relationship('Message', backref = 'author', lazy = 'dynamic')
     about_me = db.Column(db.String(140))
@@ -35,9 +36,21 @@ class User(db.Model):
     def get_id(self):
         return unicode(self.id)
 
+    # Verif l'unicite d'un login
+    @staticmethod
+    def make_unique_nickname(nickname):
+        if User.query.filter_by(nickname = nickname).first() == None:
+            return nickname
+        version = 2
+        while True:
+            new_nickname = nickname + str(version)
+            if User.query.filter_by(nickname = new_nickname).first() == None:
+                break
+            version += 1
+        return new_nickname
+
     def __repr__(self):
         return '<User %r>' % (self.nickname)
-
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key = True)

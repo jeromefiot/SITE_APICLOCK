@@ -3,14 +3,21 @@
 from app import app, db, lm, oid
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
-from forms import LoginForm
+from forms import LoginForm, EditForm
 from models import User, ROLE_USER, ROLE_ADMIN
+from datetime import datetime
 
 
 @app.before_request
 def before_request():
-    """Charge un user depuis la base, utilisée par Flask-login, avec INT car ID sont de base en unicode"""
+    """avant chaque request on insere le current_user (definit par Flask-Login) dans la var g.user pour
+    une utilisation plus simple, meme dans les templates """
     g.user = current_user
+    # on vérifie qu'il est auth. puis on update sa valeur last_seen
+    if g.user.is_authenticated():
+        g.user.last_seen=datetime.utcnow()
+        db.session.add(g.user)
+        db.session.commit()
 
 @lm.user_loader
 def load_user(id):
@@ -20,7 +27,6 @@ def load_user(id):
 
 @app.route('/')
 def index():
-    user=g.user
     title="Accueil"
     return render_template("index.html",
                            title=title)
@@ -87,6 +93,7 @@ def after_login(resp):
         nickname = resp.nickname
         if nickname is None or nickname == "":
             nickname = resp.email.split('@')[0]
+            nickname = User.make_unique_nickname(nickname)
         user = User(nickname = nickname, email = resp.email, role = ROLE_USER)
         db.session.add(user)
         db.session.commit()
@@ -107,3 +114,41 @@ def user(nickname):
 
     return render_template('user.html',
         user = user)
+
+
+@app.route('/edit', methods=['GET', 'POST'])
+@login_required
+def edit():
+    form=EditForm(g.user.nickname)
+
+    # si on est en POST (modif soumises) on récup et on insère en faisant attention
+    if form.validate_on_submit():
+        g.user.nickname=form.nickname.data
+        g.user.tweeter=form.tweeter.data
+        g.user.about_me=form.about_me.data
+
+        db.session.add(g.user)
+        db.session.commit()
+        # on prévient que c'est fait et on met à jour
+        flash('Infos mises a jour')
+        redirect(url_for('edit'))
+
+    else:
+        # on récup les infos depuis g.user et on remplit le formulaire avec
+        form.nickname.data = g.user.nickname
+        form.tweeter.data = g.user.tweeter
+        form.about_me.data = g.user.about_me
+
+    return render_template('edit.html',
+        form = form)
+
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500
