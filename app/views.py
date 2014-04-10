@@ -56,6 +56,13 @@ def communaute():
                            title=title,
                            user = user)
 
+@app.route('/avancement')
+def avancement():
+    title="Avancement elaboration Apiclock"
+
+    return render_template("apiclock_avancement.html",
+                           title=title)
+
 
 @app.route('/login',methods=['POST', 'GET'])
 @oid.loginhandler

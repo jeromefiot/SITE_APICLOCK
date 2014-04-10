@@ -16,6 +16,7 @@
     <a href="{{ url_for('index') }}">Accueil</a>
     <a href="{{ url_for('presentation') }}">Apicloc</a>
         <a href="{{ url_for('presentation') }}">Presentation</a>
+        <a href="{{ url_for('avancement') }}">Avancement</a>
         <a href="{{ url_for('commande') }}">Commander</a>
 
     {% if not g.user.is_authenticated() %}
