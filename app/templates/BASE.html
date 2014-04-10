@@ -9,28 +9,39 @@
 </head>
 <body>
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }} </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-
 <nav>
-    <ul>
-        <li><a href="{{ url_for('index') }}">Accueil</a></li>
-        <li><a href="{{ url_for('login') }}">Participer</a></li>
-        <li><a href="{{ url_for('communaute') }}">Communauté</a></li>
-    </ul>
-</nav>
+    <a href="{{ url_for('index') }}">Accueil</a>
+    <a href="{{ url_for('presentation') }}">Apicloc</a>
+        <a href="{{ url_for('presentation') }}">Presentation</a>
+        <a href="{{ url_for('commande') }}">Commander</a>
 
-    {% block content %}{% endblock %}
+    {% if not g.user.is_authenticated() %}
+        <a href="{{ url_for('login') }}">Participer</a>
+    {% endif %}
+
+    {% if g.user.is_authenticated() %}
+        <a href="{{ url_for('communaute') }}">Communauté</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('user', nickname = g.user.nickname) }}">Profil</a>
+    {% endif %}
+</nav>
+<hr/>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+    {% block content %} {% endblock %}
 
 <footer>
     <hr/>
+    {% include 'footer.html' %}
 </footer>
 
 </body>

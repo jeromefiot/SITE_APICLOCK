@@ -1,12 +1,26 @@
 # -*- coding: utf-8 -*-
 
-from app import app, models
-from flask import render_template, flash, redirect, session, url_for
+from app import app, db, lm, oid
+from flask import render_template, flash, redirect, session, url_for, request, g
+from flask.ext.login import login_user, logout_user, current_user, login_required
 from forms import LoginForm
+from models import User, ROLE_USER, ROLE_ADMIN
+
+
+@app.before_request
+def before_request():
+    """Charge un user depuis la base, utilisée par Flask-login, avec INT car ID sont de base en unicode"""
+    g.user = current_user
+
+@lm.user_loader
+def load_user(id):
+    """Charge un user depuis la base, utilisée par Flask-login, avec INT car ID sont de base en unicode"""
+    return User.query.get(int(id))
 
 
 @app.route('/')
 def index():
+    user=g.user
     title="Accueil"
     return render_template("index.html",
                            title=title)
@@ -19,27 +33,77 @@ def presentation():
                            title=title)
 
 
+@app.route('/commande')
+def commande():
+    title="Commander l'Apiclock"
+
+    return render_template("apiclock_commande.html",
+                           title=title)
+
+
 @app.route('/communaute')
 def communaute():
     title="Communaute Apiclock"
 
-    user = models.User.query.all()
+    user = User.query.all()
     return render_template("communaute.html",
                            title=title,
                            user = user)
 
 
 @app.route('/login',methods=['POST', 'GET'])
+@oid.loginhandler
 def login():
+    if g.user is not None and g.user.is_authenticated():
+        return redirect(url_for('index'))
+
     form=LoginForm()
     title="Login"
 
     # Si retour de validation de formulaire
     if form.validate_on_submit():
-        flash('Vous etes connectes '+ form.pseudo.data +' avec l\'id' + form.openid.data +', have a nice day' )
-        return redirect(url_for('index'))
+        session['remember_me'] = form.remember_me.data
+        return oid.try_login(form.openid.data, ask_for=['nickname', 'email'])
 
     return render_template("login.html",
                            title=title  ,
                            form=form,
-                           providers = app.config['OPENID_PROVIDERS'])
+                           providers=app.config['OPENID_PROVIDERS'])
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+
+@oid.after_login
+def after_login(resp):
+    if resp.email is None or resp.email == "":
+        flash('Login incorrect, essayez à nouveau')
+        return redirect(url_for('login'))
+    user = User.query.filter_by(email = resp.email).first()
+    if user is None:
+        nickname = resp.nickname
+        if nickname is None or nickname == "":
+            nickname = resp.email.split('@')[0]
+        user = User(nickname = nickname, email = resp.email, role = ROLE_USER)
+        db.session.add(user)
+        db.session.commit()
+    remember_me = False
+    if 'remember_me' in session:
+        remember_me = session['remember_me']
+        session.pop('remember_me', None)
+    login_user(user, remember = remember_me)
+    return redirect(request.args.get('next') or url_for('index'))
+
+@app.route('/user/<nickname>')
+@login_required
+def user(nickname):
+    user = User.query.filter_by(nickname = nickname).first()
+    if user == None:
+        flash('User ' + nickname + ' not found.')
+        return redirect(url_for('index'))
+
+    return render_template('user.html',
+        user = user)

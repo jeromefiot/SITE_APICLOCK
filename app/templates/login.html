@@ -21,17 +21,6 @@
     <form action="" method="post" name="login">
     {{ form.hidden_tag() }}
 
-        <p>Email : {{ form.email(size=50) }} <br/>
-        {% for error in form.errors.email %}
-        <span style="color: red;">[{{error}}]</span>
-        {% endfor %}<br>
-        </p>
-
-        <p>Pseudo : {{ form.pseudo(size=50) }} <br/>
-        {% for error in form.errors.pseudo %}
-        <span style="color: red;">[{{error}}]</span>
-        {% endfor %}<br>
-        </p>
 
         <p>OpenID : {{ form.openid(size=80) }} <br/>
         {% for error in form.errors.openid %}

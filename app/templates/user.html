@@ -1,0 +1,17 @@
+{% extends "BASE.html" %}
+
+    {% block content %}
+
+    <table>
+        <tr valign="top">
+            <td><img src="{{user.avatar(80)}}"></td>
+            <td>
+                <h1>User: {{user.nickname}}</h1>
+                {% if user.about_me %}{{user.about_me}}{% endif %}
+                {% if user.last_seen %}{{user.last_seen}}{% endif %}
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    {% endblock %}
