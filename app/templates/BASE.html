@@ -6,43 +6,86 @@
     {% else %}
     <title>Apiclock</title>
     {% endif %}
+    <link rel="stylesheet" href="/static/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/static/js/moment.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
-<nav>
-    <a href="{{ url_for('index') }}">Accueil</a>
-    <a href="{{ url_for('presentation') }}">Apicloc</a>
-        <a href="{{ url_for('presentation') }}">Presentation</a>
-        <a href="{{ url_for('avancement') }}">Avancement</a>
-        <a href="{{ url_for('commande') }}">Commander</a>
-        <a href="{{ url_for('team') }}">L'équipe</a>
 
-    {% if not g.user.is_authenticated() %}
-        <a href="{{ url_for('login') }}">Participer</a>
-    {% endif %}
+ <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="{{ url_for('index') }}" class="navbar-brand">Apiclock</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">APIClock<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="{{ url_for('commande') }}">Commander</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ url_for('presentation') }}">Presentation</a></li>
+                <li><a href="{{ url_for('avancement') }}">Avancement</a></li>
+                <li><a href="{{ url_for('team') }}">L'équipe</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="{{ url_for('commande') }}">Commander</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
 
-    {% if g.user.is_authenticated() %}
-        <a href="{{ url_for('communaute') }}">Communauté</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-        <a href="{{ url_for('user', nickname = g.user.nickname) }}">Profil</a>
-    {% endif %}
-</nav>
-<hr/>
+            <ul class="nav navbar-nav navbar-right">
+                {% if not g.user.is_authenticated() %}
+                    <li><a href="{{ url_for('login') }}" >Participer</a></li>
+                {% endif %}
 
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }} </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
+                {% if g.user.is_authenticated() %}
+                    <li><a href="{{ url_for('communaute') }}">Communauté</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('user', nickname = g.user.nickname) }}">Profil</a></li>
+                {% endif %}
+            </ul>
 
-    {% block content %} {% endblock %}
+        </div>
+      </div>
+    </div>
+
+ <br/><br/>
+
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-6">
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }} </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <footer>
     <hr/>
