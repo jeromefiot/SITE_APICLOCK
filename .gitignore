@@ -5,4 +5,5 @@
 *.cfg
 *.txt
 /tmp
+run.py
 local_config.py
