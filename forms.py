@@ -16,9 +16,10 @@ class LoginForm(Form):
 
 class EditForm(Form):
     """Edition des infos User depuis son profil -> lien Edit"""
-    nickname = TextField('Nickname', validators=[Length(min=5, max=40), Required()])
-    tweeter = TextField('Tweeter', validators=[Length(min=5, max=40)])
-    about_me = TextAreaField('A propos', validators=[Length(min=0, max=140)])
+    nickname = TextField('Nickname', validators=[Length(min=5, max=25), Required()])
+    tweeter = TextField('Tweeter', validators=[Length(min=5, max=50)])
+    website = TextField('Site', validators=[Length(min=6, max=100)])
+    about_me = TextAreaField('A propos', validators=[Length(min=0, max=150)])
 
     # rajout d'un argument pour cette classe pour vérif l'unicite du nickname
     def __init__(self, original_nickname, *args, **kwargs):

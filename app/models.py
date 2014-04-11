@@ -17,6 +17,7 @@ class User(db.Model):
     tweet = db.Column(db.Boolean, default = False)
     messages = db.relationship('Message', backref = 'author', lazy = 'dynamic')
     about_me = db.Column(db.String(140))
+    website = db.Column(db.String(200))
     last_seen = db.Column(db.DateTime)
 
     def avatar(self, size):

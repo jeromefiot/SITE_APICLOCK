@@ -9,13 +9,18 @@
                 <h1>{{user.nickname}}</h1>
                 <em>{% if user.about_me %}{{ user.about_me }}{% endif %} </em><br/>
 
-                {% if user.last_seen %}<em>Vu le : {{ momentjs(user.last_seen).calendar() }}</em>
+                {% if user.last_seen %}<em>{{ momentjs(user.last_seen).calendar() }}</em>
                 {% endif %}<br/>
 
-                {% if user.tweeter %}Twitter : <a href="https://twitter.com/{{ user.tweeter }}" target="_blank">
-                {{ user.tweeter }}</a> {% endif %}<br/>
+                {% if user.tweeter %}<span class="glyphicon glyphicon-tag"></span>
+                <a href="https://twitter.com/{{ user.tweeter }}" target="_blank">   {{ user.tweeter }}</a> {% endif %} |
 
-                {% if user.messages %} Nbr messages : {{ user.messages.count() }} {% endif %}
+                {% if user.website %}<span class="glyphicon glyphicon-link"></span>
+                <a href="http://{{ user.website }}" target="_blank"> {{ user.website }}</a> {% endif %} |
+
+                {% if user.messages %} <span class="glyphicon glyphicon-comment"></span>
+                {{ user.messages.count() }} {% endif %}
+
                 {% if user.id == g.user.id %}<p><a href="{{url_for('edit')}}">Editer</a></p>{% endif %}
             </td>
         </tr>

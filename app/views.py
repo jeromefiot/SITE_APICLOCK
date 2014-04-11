@@ -95,6 +95,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
+    flash('Vous êtes bien déconnecté... ca, ya pas à dire c\'est du bel ouvrage !')
     return redirect(url_for('index'))
 
 
@@ -124,7 +125,7 @@ def after_login(resp):
 def user(nickname):
     user = User.query.filter_by(nickname = nickname).first()
     if user == None:
-        flash('User ' + nickname + ' not found.')
+        flash('Utilisateur ' + nickname + ' n\'existe pas.')
         return redirect(url_for('index'))
 
     return render_template('user.html',
@@ -140,6 +141,7 @@ def edit():
     if form.validate_on_submit():
         g.user.nickname=form.nickname.data
         g.user.tweeter=form.tweeter.data
+        g.user.website=form.website.data
         g.user.about_me=form.about_me.data
 
         db.session.add(g.user)
@@ -152,6 +154,7 @@ def edit():
         # on récup les infos depuis g.user et on remplit le formulaire avec
         form.nickname.data = g.user.nickname
         form.tweeter.data = g.user.tweeter
+        form.website.data = g.user.website
         form.about_me.data = g.user.about_me
 
     return render_template('edit.html',
