@@ -4,4 +4,5 @@
 *.sqlite
 *.cfg
 *.txt
+/tmp
 local_config.py
