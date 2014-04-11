@@ -12,18 +12,19 @@
 prêt à l'emploi ?</a>
         <br/><br/><br/>
 
-        Alors si vous souhaitez : <br/>
-        --------------------<br/>
+        {% if not g.user.is_authenticated() %}
+            Alors si vous souhaitez : <br/>
+            --------------------<br/>
 
-        Apportez votre connaissance / savoir faire au projet <br/>
-        (et ainsi faire peut être parti des betatesteurs : 2 APICLOCK à gagner)<br/>
-        <a href="{{ url_for('login') }}" >Participer</a>
-        <br/><br/><br/>
-        --------------------<br/>
+            Apportez votre connaissance / savoir faire au projet <br/>
+            (et ainsi faire peut être parti des betatesteurs : 2 APICLOCK à gagner)<br/>
+            <a href="{{ url_for('login') }}" >Participer</a>
+            <br/><br/><br/>
+            --------------------<br/>
 
-        Etre prévenu lors de sa sortie <br/>
-        (et ainsi peut être gagner un APICLOCK si vous tweetez ce message)<br/>
-        <a href="{{ url_for('login') }}" >Participer</a>
-
+            Etre prévenu lors de sa sortie <br/>
+            (et ainsi peut être gagner un APICLOCK si vous tweetez ce message)<br/>
+            <a href="{{ url_for('login') }}" >Participer</a>
+        {% endif %}
 
     {% endblock %}

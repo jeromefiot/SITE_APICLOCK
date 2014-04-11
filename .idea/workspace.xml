@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="905b897d-265e-4ffc-8624-cecbf5a12661" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SITE_APICLOCK_V2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +29,7 @@
       <file leaf-file-name="communaute.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/communaute.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="0" column="0" selection-start="0" selection-end="230" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -37,25 +38,34 @@
       <file leaf-file-name="team.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/team.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="390">
+            <state line="10" column="20" selection-start="176" selection-end="176" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
+      <file leaf-file-name="BASE.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/BASE.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="6" selection-start="141" selection-end="141" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="150">
+            <state line="50" column="54" selection-start="2020" selection-end="2058" vertical-scroll-proportion="-8.75" vertical-offset="540" max-vertical-offset="1515">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="4" selection-start="91" selection-end="91" vertical-scroll-proportion="0.15929204" vertical-offset="0" max-vertical-offset="565">
+            <state line="27" column="16" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.74861366" vertical-offset="0" max-vertical-offset="541">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="local_config.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/local_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="165" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -88,28 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="75" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="435">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="16" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="405">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="65" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="585">
               <folding />
             </state>
           </provider>
@@ -138,7 +130,6 @@
         <option value="$PROJECT_DIR$/app/templates/base_base.html" />
         <option value="$PROJECT_DIR$/app/templates/apiclock_presentation.html" />
         <option value="$PROJECT_DIR$/models.py" />
-        <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/templates/apiclock_commande.html" />
         <option value="$PROJECT_DIR$/app/templates/login.html" />
         <option value="$PROJECT_DIR$/local_config.py" />
@@ -152,13 +143,14 @@
         <option value="$PROJECT_DIR$/app/templates/user.html" />
         <option value="$PROJECT_DIR$/app/templates/edit.html" />
         <option value="$PROJECT_DIR$/app/templates/communaute.html" />
-        <option value="$PROJECT_DIR$/app/templates/team.html" />
         <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/static/css/bootswatch.css" />
         <option value="$PROJECT_DIR$/app/static/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/templates/BASE.html" />
         <option value="$PROJECT_DIR$/app/templates/footer.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/templates/team.html" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
       </list>
     </option>
   </component>
@@ -224,6 +216,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SITE_APICLOCK_V2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SITE_APICLOCK_V2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -436,7 +446,11 @@
       <created>1397201338043</created>
       <updated>1397201338043</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="team">
+      <created>1397202316241</created>
+      <updated>1397202316241</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -482,7 +496,8 @@
     <MESSAGE value="Lien profil public / communauté modif / edit profil vers profil" />
     <MESSAGE value="Team" />
     <MESSAGE value="Couche Bootstrap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Couche Bootstrap" />
+    <MESSAGE value="team" />
+    <option name="LAST_COMMIT_MESSAGE" value="team" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -656,16 +671,6 @@
         <state line="7" column="10" selection-start="118" selection-end="118" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="225" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="70" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="446" selection-end="454" vertical-scroll-proportion="-2.5833333" vertical-offset="88" max-vertical-offset="510" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="8" selection-start="1152" selection-end="1196" vertical-scroll-proportion="-11.333333" vertical-offset="313" max-vertical-offset="735" />
@@ -736,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/team.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="11" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0" vertical-offset="632" max-vertical-offset="2535">
@@ -764,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/BASE.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="11" selection-start="2571" selection-end="2571" vertical-scroll-proportion="-0.125" vertical-offset="972" max-vertical-offset="1515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="6" selection-start="141" selection-end="141" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="150">
@@ -780,7 +771,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="91" selection-end="91" vertical-scroll-proportion="0.15929204" vertical-offset="0" max-vertical-offset="565">
+        <state line="6" column="4" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="165" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/team.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="20" selection-start="176" selection-end="176" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/BASE.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="54" selection-start="2020" selection-end="2058" vertical-scroll-proportion="-8.75" vertical-offset="540" max-vertical-offset="1515">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="16" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.74861366" vertical-offset="0" max-vertical-offset="541">
           <folding />
         </state>
       </provider>
