@@ -51,8 +51,13 @@
           </ul>
 
             <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="{{ url_for('apiclock') }}">Tester</a>
+                </li>
+
                 {% if not g.user.is_authenticated() %}
-                    <li><a href="{{ url_for('login') }}" >Participer / Tester</a></li>
+                    <li><a href="{{ url_for('login') }}" >Participer</a></li>
                 {% endif %}
 
                 {% if g.user.is_authenticated() %}
@@ -62,7 +67,6 @@
                     <li><a href="{{ url_for('user', nickname = g.user.nickname) }}">Profil</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ url_for('communaute') }}">Communauté</a></li>
-                    <li><a href="{{ url_for('login') }}">Tester</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                   </ul>

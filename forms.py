@@ -40,3 +40,8 @@ class EditForm(Form):
             return False
         # sinon TRUE
         return True
+
+class LoginApiclock(Form):
+    """ Pour la page d'accès au WIP APICLOCK """
+    nickname = TextField('Nickname', validators=[Length(min=5, max=25), Required()])
+    email = TextField('email', validators=[Required()])

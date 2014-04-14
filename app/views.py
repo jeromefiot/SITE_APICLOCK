@@ -3,7 +3,7 @@
 from app import app, db, lm, oid
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
-from forms import LoginForm, EditForm
+from forms import LoginForm, EditForm, LoginApiclock
 from models import User, ROLE_USER, ROLE_ADMIN
 from datetime import datetime
 
@@ -35,7 +35,7 @@ def index():
 def presentation():
     title="Presentation Apiclock"
 
-    return render_template("apiclock_presentation.html",
+    return render_template("presentation_apiclock.html",
                            title=title)
 
 
@@ -43,7 +43,7 @@ def presentation():
 def commande():
     title="Commander l'Apiclock"
 
-    return render_template("apiclock_commande.html",
+    return render_template("commande_apiclock.html",
                            title=title)
 
 
@@ -60,7 +60,7 @@ def communaute():
 def avancement():
     title="Avancement elaboration Apiclock"
 
-    return render_template("apiclock_avancement.html",
+    return render_template("avancement_apiclock.html",
                            title=title)
 
 
@@ -90,7 +90,6 @@ def login():
                            title=title  ,
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
-
 
 @app.route('/logout')
 def logout():
@@ -160,7 +159,6 @@ def edit():
     return render_template('edit.html',
         form = form)
 
-
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
@@ -170,3 +168,19 @@ def not_found_error(error):
 def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500
+
+
+# ---------------------------------
+#   Pages ALICLOCK
+# ---------------------------------
+
+@app.route('/apiclock', methods=['GET', 'POST'])
+def apiclock():
+    form = LoginApiclock()
+
+    if g.user.is_authenticated():
+    # si le user est inscrit on récup ses infos (mail / utilisateur)
+        form.nickname.data=g.user.nickname
+        form.email.data=g.user.email
+
+    return render_template('APICLOCK_login.html', form = form)
