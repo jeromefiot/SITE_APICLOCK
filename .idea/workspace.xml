@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="905b897d-265e-4ffc-8624-cecbf5a12661" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/apiclock_login.html" afterPath="$PROJECT_DIR$/app/templates/apiclock_login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SITE_APICLOCK_V2.iws" />
@@ -34,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="28" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9315589" vertical-offset="2876" max-vertical-offset="3492">
+            <state line="176" column="0" selection-start="5236" selection-end="5236" vertical-scroll-proportion="0.0" vertical-offset="2759" max-vertical-offset="3298">
               <folding>
                 <element signature="e#25#57#0" expanded="true" />
               </folding>
@@ -45,8 +46,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APICLOCK_accueil.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/apiclock/APICLOCK_accueil.html">
+      <file leaf-file-name="apiclock_accueil.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/apiclock/apiclock_accueil.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="180">
               <folding />
@@ -63,8 +64,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BASE_apiclock.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/apiclock/BASE_apiclock.html">
+      <file leaf-file-name="base_apiclock.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/apiclock/base_apiclock.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="31" column="57" selection-start="1126" selection-end="1126" vertical-scroll-proportion="-6.5416665" vertical-offset="308" max-vertical-offset="930">
               <folding />
@@ -92,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APICLOCK_login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/APICLOCK_login.html">
+      <file leaf-file-name="apiclock_login.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/apiclock_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="66" selection-start="528" selection-end="528" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="420">
+            <state line="14" column="37" selection-start="499" selection-end="499" vertical-scroll-proportion="0.407767" vertical-offset="0" max-vertical-offset="515">
               <folding />
             </state>
           </provider>
@@ -114,7 +115,12 @@
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="82" column="0" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1680">
-              <folding />
+              <folding>
+                <marker date="1397490394000" expanded="true" signature="161:1790" placeholder="..." />
+                <marker date="1397490394000" expanded="true" signature="1745:1790" placeholder="..." />
+                <marker date="1397490394000" expanded="true" signature="2876:3477" placeholder="..." />
+                <marker date="1397490394000" expanded="true" signature="3391:3477" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/templates/apiclock/BASE_apiclock.html" />
         <option value="$PROJECT_DIR$/app/templates/edit.html" />
         <option value="$PROJECT_DIR$/app/views.py" />
+        <option value="$PROJECT_DIR$/app/templates/apiclock_login.html" />
       </list>
     </option>
   </component>
@@ -292,28 +299,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SITE_APICLOCK_V2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SITE_APICLOCK_V2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -568,7 +553,11 @@
       <created>1397508733145</created>
       <updated>1397508733147</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="SUppression du champ mail dans EDIT">
+      <created>1397509284934</created>
+      <updated>1397509284934</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -834,7 +823,12 @@
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="82" column="0" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="1116" max-vertical-offset="1680">
-          <folding />
+          <folding>
+            <marker date="1397490394000" expanded="true" signature="161:1790" placeholder="..." />
+            <marker date="1397490394000" expanded="true" signature="1745:1790" placeholder="..." />
+            <marker date="1397490394000" expanded="true" signature="2876:3477" placeholder="..." />
+            <marker date="1397490394000" expanded="true" signature="3391:3477" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -866,18 +860,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/APICLOCK_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="66" selection-start="528" selection-end="528" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="19" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="720">
           <folding>
-            <element signature="e#25#55#0" expanded="true" />
+            <element signature="e#25#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,14 +876,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/apiclock/APICLOCK_accueil.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/apiclock/apiclock_accueil.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="515">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/apiclock/BASE_apiclock.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/apiclock/base_apiclock.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="57" selection-start="1126" selection-end="1126" vertical-scroll-proportion="-6.5416665" vertical-offset="308" max-vertical-offset="930">
           <folding />
@@ -921,10 +908,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="28" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9315589" vertical-offset="2876" max-vertical-offset="3492">
+        <state line="176" column="0" selection-start="5236" selection-end="5236" vertical-scroll-proportion="0.0" vertical-offset="2759" max-vertical-offset="3298">
           <folding>
             <element signature="e#25#57#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/apiclock_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="37" selection-start="499" selection-end="499" vertical-scroll-proportion="0.407767" vertical-offset="0" max-vertical-offset="515">
+          <folding />
         </state>
       </provider>
     </entry>
