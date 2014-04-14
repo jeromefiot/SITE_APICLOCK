@@ -1,0 +1,37 @@
+{% extends "BASE.html" %}
+
+    {% block content %}
+
+    TESTER L'APICLOCK
+    <hr/>
+        Pour tester il faut être inscrit.
+        Pour l'acces à la démo renseignez le mail de votre inscription sinon <a href="{{ url_for('login') }}">inscrivez-vous ici</a><br/>
+        Tout sera remis à jour toutes les heures<br/>
+        Encore une fois, on ne fera rien de vos données, juste vous prévenir losr de la sortie de l'apiclock !<br/>
+    <hr/>
+
+    {% if g.user.is_authenticated() %}
+        <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+
+            <p>Utilisateur : {{ form.nickname(size=40) }} <br/>
+            {% for error in form.errors.nickname %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}<br>
+            </p>
+
+            <p>Email : {{ form.email(size=40) }} <br/></p>
+            {% for error in form.errors.email %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}<br>
+
+            <p><input type="submit" value="Sign In"></p>
+        </form>
+
+    {% else %}
+
+        <a href="{{ url_for('login') }}">S'inscrire</a>
+
+    {% endif %}
+
+    {% endblock %}

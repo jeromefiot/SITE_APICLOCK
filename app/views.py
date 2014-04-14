@@ -152,6 +152,7 @@ def edit():
     else:
         # on récup les infos depuis g.user et on remplit le formulaire avec
         form.nickname.data = g.user.nickname
+        form.email.data = g.user.email
         form.tweeter.data = g.user.tweeter
         form.website.data = g.user.website
         form.about_me.data = g.user.about_me

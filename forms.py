@@ -17,6 +17,7 @@ class LoginForm(Form):
 class EditForm(Form):
     """Edition des infos User depuis son profil -> lien Edit"""
     nickname = TextField('Nickname', validators=[Length(min=5, max=25), Required()])
+    email = TextField('Email', validators=[Length(min=5, max=30)])
     tweeter = TextField('Tweeter', validators=[Length(min=5, max=50)])
     website = TextField('Site', validators=[Length(min=6, max=100)])
     about_me = TextAreaField('A propos', validators=[Length(min=0, max=150)])
@@ -36,7 +37,7 @@ class EditForm(Form):
         # si déjà un user dans la base avec le meme nickname alors FALSE
         user = User.query.filter_by(nickname = self.nickname.data).first()
         if user != None:
-            self.nickname.errors.append('This nickname is already in use. Please choose another one.')
+            self.nickname.errors.append('Trop tard... ce pseudo est déjà utilisé, choisissez en un autre.')
             return False
         # sinon TRUE
         return True
