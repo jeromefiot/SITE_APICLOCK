@@ -4,29 +4,15 @@
 
     TESTER L'APICLOCK
     <hr/>
-        Pour tester il faut être inscrit.
-        Pour l'acces à la démo renseignez le mail de votre inscription sinon <a href="{{ url_for('login') }}">inscrivez-vous ici</a><br/>
+        Pour tester vous devez être inscrit (nécessite juste un compte google, yahoo ou AOL) <br/>
+        Sinon <a href="{{ url_for('login') }}">inscrivez-vous ici</a><br/>
         Tout sera remis à jour toutes les heures<br/>
-        Encore une fois, on ne fera rien de vos données, juste vous prévenir losr de la sortie de l'apiclock !<br/>
+        (on ne fera rien de vos données, juste vous prévenir losr de la sortie de l'apiclock)<br/>
     <hr/>
 
     {% if g.user.is_authenticated() %}
-        <form action="" method="post" name="login">
-        {{ form.hidden_tag() }}
 
-            <p>Utilisateur : {{ form.nickname(size=40) }} <br/>
-            {% for error in form.errors.nickname %}
-            <span style="color: red;">[{{error}}]</span>
-            {% endfor %}<br>
-            </p>
-
-            <p>Email : {{ form.email(size=40) }} <br/></p>
-            {% for error in form.errors.email %}
-            <span style="color: red;">[{{error}}]</span>
-            {% endfor %}<br>
-
-            <p><input type="submit" value="Sign In"></p>
-        </form>
+        <a href="{{ url_for('APICLOCK_accueil') }}">Tester l'APIclock</a>
 
     {% else %}
 

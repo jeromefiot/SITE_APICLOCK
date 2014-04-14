@@ -3,7 +3,7 @@
 from app import app, db, lm, oid
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
-from forms import LoginForm, EditForm, LoginApiclock
+from forms import LoginForm, EditForm
 from models import User, ROLE_USER, ROLE_ADMIN
 from datetime import datetime
 
@@ -175,13 +175,14 @@ def internal_error(error):
 #   Pages ALICLOCK
 # ---------------------------------
 
-@app.route('/apiclock', methods=['GET', 'POST'])
+@app.route('/apiclock')
 def apiclock():
-    form = LoginApiclock()
 
-    if g.user.is_authenticated():
-    # si le user est inscrit on récup ses infos (mail / utilisateur)
-        form.nickname.data=g.user.nickname
-        form.email.data=g.user.email
+    return render_template('APICLOCK_login.html')
 
-    return render_template('APICLOCK_login.html', form = form)
+
+@app.route('/apiclock_accueil')
+@login_required
+def APICLOCK_accueil():
+
+    return render_template('./apiclock/APICLOCK_accueil.html')
