@@ -16,6 +16,7 @@ class User(db.Model):
     tweeter = db.Column(db.String(40), default = '', unique = True)
     tweet = db.Column(db.Boolean, default = False)
     messages = db.relationship('Message', backref = 'author', lazy = 'dynamic')
+    subscriptions = db.relationship('Subscription', backref = 'owner', lazy = 'dynamic')
     about_me = db.Column(db.String(140))
     website = db.Column(db.String(200))
     last_seen = db.Column(db.DateTime)
@@ -54,7 +55,7 @@ class User(db.Model):
         return '<User %r>' % (self.nickname)
 
 class Message(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -62,5 +63,45 @@ class Message(db.Model):
     def __repr__(self):
         return '<Post %r>' % (self.body)
 
+
+# ----------------------------
+#   APICLOCK
+# ----------------------------
+
+class Subscription(db.Model):
+    """Gestion subscription = Abonnement flux PODCAST"""
+    __tablename__ = 'subscription'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    imageurl = db.Column(db.String(150))
+    description = db.Column(db.String(200))
+    copyright = db.Column(db.String(150))
+    url = db.Column(db.String(150))
+    urlxml = db.Column(db.String(150))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    podcasts = db.relationship('Podcast', backref = 'partof', lazy = 'dynamic')
+
+    def __repr__(self):
+        return "<subscription('%s', '%s', '%s', '%s)>" % \
+            (self.name, self.imageurl, self.description, self.url)
+
+
+class Podcast(db.Model):
+    """Gestion podcast"""
+    __tablename__ = 'podcast'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50))
+    date = db.Column(db.String(50))
+    description = db.Column(db.String(200))
+    pathfile = db.Column(db.String(150))
+    type = db.Column(db.String(50))
+    urlweb = db.Column(db.String(150))
+    etat = db.Column(db.String(50))
+    readstate = db.Column(db.Boolean)
+    subscription_id = db.Column(db.Integer, db.ForeignKey('subscription.id'))
+
+    def __repr__(self):
+        return "<podcast('%s', '%s')>" % \
+            (self.title, self.description)
 
 db.create_all()
