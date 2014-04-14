@@ -185,4 +185,4 @@ def apiclock():
 @login_required
 def APICLOCK_accueil():
 
-    return render_template('./apiclock/APICLOCK_accueil.html')
+    return render_template('apiclock/APICLOCK_accueil.html')

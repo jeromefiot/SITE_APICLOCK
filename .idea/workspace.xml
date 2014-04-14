@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="905b897d-265e-4ffc-8624-cecbf5a12661" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/edit.html" afterPath="$PROJECT_DIR$/app/templates/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views.py" afterPath="$PROJECT_DIR$/app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SITE_APICLOCK_V2.iws" />
@@ -29,16 +30,16 @@
       <file leaf-file-name="BASE.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/BASE.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="36" selection-start="884" selection-end="889" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="1605">
+            <state line="25" column="36" selection-start="884" selection-end="889" vertical-scroll-proportion="2.5" vertical-offset="435" max-vertical-offset="1605">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="30" selection-start="5433" selection-end="5433" vertical-scroll-proportion="0.0" vertical-offset="1706" max-vertical-offset="3492">
+            <state line="187" column="28" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9315589" vertical-offset="2876" max-vertical-offset="3492">
               <folding>
                 <element signature="e#25#57#0" expanded="true" />
               </folding>
@@ -73,11 +74,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="edit.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="557" selection-end="557" vertical-scroll-proportion="0.5048544" vertical-offset="25" max-vertical-offset="645">
-              <folding />
+            <state line="16" column="60" selection-start="480" selection-end="480" vertical-scroll-proportion="-8.958333" vertical-offset="25" max-vertical-offset="645">
+              <folding>
+                <element signature="n#style#0;n#span#0;n#td#2;n#tr#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,16 +169,16 @@
         <option value="$PROJECT_DIR$/app/templates/APICLOCK_index.html" />
         <option value="$PROJECT_DIR$/app/templates/APICLOCK_accueil.html" />
         <option value="$PROJECT_DIR$/app/templates/apiclock/APICLOCK_accueil.html" />
-        <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/templates/apiclock/BASE_apiclock.html" />
         <option value="$PROJECT_DIR$/app/templates/edit.html" />
+        <option value="$PROJECT_DIR$/app/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="62" />
-    <option name="y" value="61" />
-    <option name="width" value="1280" />
+    <option name="x" value="21" />
+    <option name="y" value="91" />
+    <option name="width" value="1340" />
     <option name="height" value="682" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -559,11 +562,15 @@
       <created>1397507727066</created>
       <updated>1397507727067</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="SUppression du champ mail dans EDIT">
+      <created>1397508099559</created>
+      <updated>1397508099559</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="61" width="1280" height="682" extended-state="0" />
+    <frame x="21" y="91" width="1340" height="682" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -572,7 +579,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32711864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2446386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23351024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -613,7 +620,8 @@
     <MESSAGE value="page +view APICLOCK_login" />
     <MESSAGE value="edit avec email affiché" />
     <MESSAGE value="rajout base APICLOCK (accueil / theme)" />
-    <option name="LAST_COMMIT_MESSAGE" value="rajout base APICLOCK (accueil / theme)" />
+    <MESSAGE value="SUppression du champ mail dans EDIT" />
+    <option name="LAST_COMMIT_MESSAGE" value="SUppression du champ mail dans EDIT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -886,13 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/BASE.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="884" selection-end="889" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="1605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/apiclock/BASE_apiclock.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="57" selection-start="1126" selection-end="1126" vertical-scroll-proportion="-6.5416665" vertical-offset="308" max-vertical-offset="930">
@@ -900,19 +901,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="30" selection-start="5433" selection-end="5433" vertical-scroll-proportion="0.0" vertical-offset="2948" max-vertical-offset="3492">
+        <state line="16" column="60" selection-start="480" selection-end="480" vertical-scroll-proportion="-8.958333" vertical-offset="25" max-vertical-offset="645">
           <folding>
-            <element signature="e#25#57#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#td#2;n#tr#0;n#table#0;n#form#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/edit.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/BASE.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="557" selection-end="557" vertical-scroll-proportion="0.5048544" vertical-offset="25" max-vertical-offset="645">
+        <state line="25" column="36" selection-start="884" selection-end="889" vertical-scroll-proportion="2.5" vertical-offset="435" max-vertical-offset="1605">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="28" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9315589" vertical-offset="2876" max-vertical-offset="3492">
+          <folding>
+            <element signature="e#25#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
