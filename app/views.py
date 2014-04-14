@@ -178,11 +178,11 @@ def internal_error(error):
 @app.route('/apiclock')
 def apiclock():
 
-    return render_template('APICLOCK_login.html')
+    return render_template('apiclock_login.html')
 
 
 @app.route('/apiclock_accueil')
 @login_required
-def APICLOCK_accueil():
+def apiclock_accueil():
 
-    return render_template('apiclock/APICLOCK_accueil.html')
+    return render_template('apiclock/apiclock_accueil.html')
