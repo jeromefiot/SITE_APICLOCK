@@ -1,0 +1,41 @@
+{% extends "apiclock/base_apiclock.html" %}
+
+    {% block content %}
+    <br/><br/>
+
+    <h4>Podcast disponibles</h4>
+    <!-- #################################################### -->
+    <!-- LISTE DES PODCAST (si il y a... ) -->
+    <!-- #################################################### -->
+    {% if listpodcast %}
+         {% for items in listpodcast %}
+            <form action="{{ url_for('acpodcast') }}" method=post>
+                 <!-- Suivant le readstate (lu pas lu)  -->
+                {% if items.readstate==0 %}
+                    <span class="label label-default"> Pas lu </span>
+                {% else %}
+                    <span class="label label-info"> Lu </span>
+                {% endif %}
+
+                <a href="{{ items.urlweb }}" target="_blank"> {{ items.title }} </a>
+
+                <!-- on envoie vers details avec les infos pour affichage podcast -->
+                <input type="hidden" name="idpodcast" value="{{ items.id }}">
+                <input type="hidden" name="idsub" value="{{ items.idsubscription }}">
+                <!-- Suivant l'état (telecharge ou pas) on met diff. boutton -->
+                {% if items.etat=='Telecharge' %}
+                    <span class="label label-info"> Telechargé </span>
+
+                    <input type="submit" class="btn btn-danger btn-xs" name="listpodcast" value="Supprimer">
+                {% else %}
+                    <input type="submit" class="btn btn-default btn-xs" name="listpodcast" value="Telecharger">
+                {% endif %}
+            </form>
+            <br/>
+         {% endfor %}
+    {% else %}
+        Pas de Podcast ou Flux invalide...
+    {% endif %}
+
+
+    {% endblock %}

@@ -1,0 +1,49 @@
+{% extends "apiclock/base_apiclock.html" %}
+
+    {% block content %}
+    <br/><br/>
+    <!-- #################################################### -->
+    <!-- LISTE DES SUBSCRIPTIONS (si il y a... ) -->
+    <!-- #################################################### -->
+    {% if listsub %}
+         {% for items in listsub %}
+
+            <form action="{{ url_for('acpodcast') }}" method=post>
+                <a href="{{ items.url}}" target="_blank"> <img src="{{ items.imageurl }}" width="100" height="100"> {{ items.name}} </a>
+                <br/>{{ items.description}} <br/> {{ items.copyright }})<br/>
+                <!-- on envoie vers details avec les infos pour affichage podcast -->
+                <input type="hidden" name="idsub" value="{{ items.id }}">
+                <input type="submit" class="btn btn-success btn-xs" name="listpodcast" value="Les podcast">
+            </form>
+
+            <br/>
+         {% endfor %}
+    {% else %}
+        Vous n'avez pas de Podcast enregistrés
+    {% endif %}
+
+    <!-- ################################################### -->
+    <!--  -->
+    <!-- ################################################### -->
+    <hr/>
+
+    <form action="{{ url_for('acsubscription') }}" method=post>
+        <fieldset>
+        <legend>Ajouter un PODCAST </legend>
+
+            {{ form.urlxml(size=80) }}
+            {% for error in form.errors.nickname %}
+                <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+            {{ form.urlemission(size=80) }}
+            {% for error in form.errors.nickname %}
+                <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+            <td rowspan="3" ><input type="submit" value="Ajouter"></td>
+
+        </fieldset>
+    </form>
+
+    {% endblock %}

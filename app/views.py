@@ -3,10 +3,11 @@
 from app import app, db, lm, oid
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
-from forms import LoginForm, EditForm
-from models import User, ROLE_USER, ROLE_ADMIN
+from forms import LoginForm, EditForm, AddSubscription
+from models import User, ROLE_USER, ROLE_ADMIN, Subscription, Podcast
 from datetime import datetime
 
+from apiclock_podcastparser import addsub, downloadpod
 
 @app.before_request
 def before_request():
@@ -186,3 +187,50 @@ def apiclock():
 def apiclockaccueil():
 
     return render_template('apiclock/apiclock_accueil.html')
+
+
+@app.route('/subscription_apiclock', methods=['POST', 'GET'])
+@login_required
+def acsubscription():
+    form = AddSubscription()
+    # liste des subs
+    listsub = Subscription.query.all()
+
+    if request.method == 'POST':
+        # Récupération + envoi pour parsing et ajout des podcasts BDD
+        urlxmla = form.urlxml.data
+        urla = form.urlemission.data
+        addsub(urlxmla, g.user.id, urla)
+
+        db.session.add(addsub)
+        db.session.commit()
+
+        listsub = Subscription.query.filter(Subscription.user_id == g.user.id).all()
+
+    return render_template('apiclock/apiclock_subscription.html',
+                           listsub=listsub,
+                           form=form)
+
+
+@app.route('/podcast_apiclock', methods=['POST', 'GET'])
+@login_required
+def acpodcast():
+
+    # recup de la liste avec l'idsubscription
+    idsub = request.form['idsub']
+    listpodcast = Podcast.query.filter(Podcast.subscription_id == idsub).all()
+
+    if request.form['listpodcast']=='Telecharger':
+        idpodcast = request.form['idpodcast']
+        pod = Podcast.query.filter(Podcast.id == idpodcast).first()
+        downloadpod(pod.pathfile, pod.title, pod.urlweb)
+
+    return render_template('apiclock/apiclock_podcast.html',
+                           listpodcast=listpodcast)
+
+
+@app.route('/radios_apiclock')
+@login_required
+def acradios():
+
+    return render_template('apiclock/apiclock_podcast.html')

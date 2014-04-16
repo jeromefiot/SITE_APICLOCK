@@ -41,3 +41,9 @@ class EditForm(Form):
             return False
         # sinon TRUE
         return True
+
+
+class AddSubscription(Form):
+    """Ajout d'un abonnement PODCAST depuis la zone de test"""
+    urlxml = TextField('URL du flux XML', validators=[Required(), Length(min=8, max=150)])
+    urlemission = TextField('URL de l\'émission', validators=[Length(min=8, max=150)])

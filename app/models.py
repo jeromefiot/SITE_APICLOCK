@@ -70,7 +70,7 @@ class Message(db.Model):
 
 class Subscription(db.Model):
     """Gestion subscription = Abonnement flux PODCAST"""
-    __tablename__ = 'subscription'
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     imageurl = db.Column(db.String(150))
@@ -81,14 +81,23 @@ class Subscription(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     podcasts = db.relationship('Podcast', backref = 'partof', lazy = 'dynamic')
 
+    def __init__(self, name, imageurl, description, copyright, url, urlxml, user_id):
+        self.name = name
+        self.imageurl=imageurl
+        self.description=description
+        self.copyright=copyright
+        self.url = url
+        self.urlxml = urlxml
+        self.user_id = user_id
+
     def __repr__(self):
         return "<subscription('%s', '%s', '%s', '%s)>" % \
             (self.name, self.imageurl, self.description, self.url)
 
 
 class Podcast(db.Model):
-    """Gestion podcast"""
-    __tablename__ = 'podcast'
+    """Gestion podcast (podcast est un MP3 appartenant à une susbscription) """
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
     date = db.Column(db.String(50))
@@ -99,6 +108,17 @@ class Podcast(db.Model):
     etat = db.Column(db.String(50))
     readstate = db.Column(db.Boolean)
     subscription_id = db.Column(db.Integer, db.ForeignKey('subscription.id'))
+
+    def __init__(self, title, date, description, pathfile, type, urlweb, etat, readstate, subscription_id):
+        self.title=title
+        self.date=date
+        self.description=description
+        self.pathfile=pathfile
+        self.type=type
+        self.urlweb=urlweb
+        self.etat=etat
+        self.readstate=readstate
+        self.subscription_id=subscription_id
 
     def __repr__(self):
         return "<podcast('%s', '%s')>" % \
