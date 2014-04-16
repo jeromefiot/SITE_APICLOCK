@@ -137,7 +137,7 @@ def edit():
     form=EditForm(g.user.nickname)
 
     # si on est en POST (modif soumises) on récup et on insère en faisant attention
-    if form.validate_on_submit():
+    if request.method=='POST':
         g.user.nickname=form.nickname.data
         g.user.tweeter=form.tweeter.data
         g.user.website=form.website.data
@@ -158,7 +158,7 @@ def edit():
         form.about_me.data = g.user.about_me
 
     return render_template('edit.html',
-        form = form)
+        form=form)
 
 @app.errorhandler(404)
 def not_found_error(error):
