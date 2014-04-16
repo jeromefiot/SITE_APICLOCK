@@ -19,7 +19,7 @@ class EditForm(Form):
     nickname = TextField('Nickname', validators=[Length(min=5, max=25), Required()])
     email = TextField('Email', validators=[Length(min=5, max=30)])
     tweeter = TextField('Tweeter', validators=[Length(min=5, max=50)])
-    website = TextField('Site', validators=[Length(min=6, max=100)])
+    website = TextField('Website', validators=[Length(min=6, max=100)])
     about_me = TextAreaField('A propos', validators=[Length(min=0, max=150)])
 
     # rajout d'un argument pour cette classe pour vérif l'unicite du nickname
