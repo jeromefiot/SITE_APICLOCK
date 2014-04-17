@@ -125,3 +125,7 @@ class Podcast(db.Model):
             (self.title, self.description)
 
 db.create_all()
+
+
+if __name__ == '__main__':
+    db.create_all()

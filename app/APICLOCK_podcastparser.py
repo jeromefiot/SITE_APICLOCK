@@ -36,7 +36,6 @@ def addsub(urlxmla, iduser, url="#"):
 
     # parsing et insertion des item dans la bdd
     for items in listpodcast:
-        print items.title.string
         newpod = Podcast ((items.title.string).replace('/', ' sur '),
                           items.pubdate.string,
                           items.description.string,
