@@ -12,8 +12,10 @@
       <!-- Bootstrap core CSS -->
       <link href="/static/css/bootstrap.css" rel="stylesheet">
       <link rel="stylesheet" href="/static/css/style.css" media="screen">
+      <link rel="stylesheet" href="/static/css/apiclock/apiclock_base.css" media="screen">
       <link href="/static/css/apiclock/bootstrap-tour.min.css" rel="stylesheet">
 
+      <script type="text/javascript" src="/static/js/horloge.js"></script>
 
 
   </head>
@@ -68,6 +70,8 @@
 
     <div class="container">
       {% block content %}
+        <span id="date_heure"></span>
+        <script type="text/javascript">window.onload = date_heure('date_heure');</script>
       {% endblock %}
     </div><!-- /.container -->
 
@@ -75,10 +79,12 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/moment.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/bootstrap-tour.min.js"></script>
     <script src="/static/js/script_tour.js"></script>
+
 
   </body>
 </html>

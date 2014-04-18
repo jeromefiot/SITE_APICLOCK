@@ -176,10 +176,10 @@ def internal_error(error):
 #   Pages APICLOCK
 # ---------------------------------
 
-@app.route('/apiclock')
+@app.route('/apiclockdoc')
 def documentation():
     """ je veux ca : http://fgribreau.github.io/bootstrap-tour/docs/bootstrap-tour.js.html#addStep"""
-    return render_template('apiclock_documentation.html')
+    return render_template('apiclock/apiclock_documentation.html')
 
 
 @app.route('/apiclock')
