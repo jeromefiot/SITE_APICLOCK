@@ -5,9 +5,11 @@ from flask import render_template, flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from forms import LoginForm, EditForm, AddSubscription
 from models import User, ROLE_USER, ROLE_ADMIN, Subscription, Podcast
-from datetime import datetime
+from datetime import datetime, timedelta
+import time
 
 from apiclock_podcastparser import addsub, downloadpod
+from apiclock_Googleevent import HtmlCalendar
 
 @app.before_request
 def before_request():
@@ -240,3 +242,43 @@ def acpodcast():
 def acradios():
 
     return render_template('apiclock/apiclock_podcast.html')
+
+
+@app.route('/event_apiclock')
+@login_required
+def acevent():
+
+    cal = HtmlCalendar('http://www.google.com/calendar/htmlembed?src='+g.user.email+'&amp;ctz=Europe/Paris&mode=AGENDA')
+    event = cal.ListCal()
+    descriptionprochain = event[0]['DESCRIPTION']
+    date_event=event[0]['DATE']
+    test2 = str(date_event)[-8:]
+
+    # Calcul du temps avant le prochain event
+    maintenant=(datetime.now()-datetime(1970, 1, 1)).total_seconds()
+    prochaint= (date_event-datetime(1970, 1, 1)).total_seconds()
+    dateevent=prochaint-maintenant
+    heure_event=dateevent/3600
+    print dateevent
+    print heure_event
+
+    #si inferieur a un jour et debut a 7h59 on dit today!
+    if test2=='07:59:00' and heure_event<24:
+        timeevent=int(24-datetime.now().hour)
+        dateevent=None
+
+    elif heure_event<24:
+        dateevent=None
+        timeevent=abs(int(heure_event-datetime.now().hour))
+
+    else:
+        dateevent=int(heure_event/24)
+        print dateevent
+        timeevent=abs(int((heure_event-dateevent*24)-datetime.now().hour))
+
+
+    return render_template('apiclock/apiclock_googleevent.html',
+                           event=event,
+                           descriptionprochain=descriptionprochain,
+                           dateevent=dateevent,
+                           timeevent=timeevent)

@@ -42,7 +42,13 @@
                 <li><a href="{{ url_for('acradios') }}">Mes radios</a></li>
                 <li><a href="{{ url_for('acsubscription') }}">Podcast</a></li>
               </ul>
-            </li>
+          </li>
+          <li class="dropdown">
+              <a class="dropdown-toggle tour-step tour-step-one" data-toggle="dropdown" href="#" id="themes">Divers<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="{{ url_for('acevent') }}">Google Event</a></li>
+              </ul>
+          </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -61,6 +67,7 @@
                           <li><a href="{{ url_for('logout') }}">Logout</a></li>
                       </ul>
               </li>
+
           </ul>
 
 

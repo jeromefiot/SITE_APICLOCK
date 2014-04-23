@@ -1,0 +1,39 @@
+{% extends "apiclock/base_apiclock.html" %}
+
+    {% block content %}
+    <br/><br/>
+
+    <h4>Vos events GOOGLE</h4>
+    <!-- #################################################### -->
+    <!-- LISTE DES PODCAST -->
+    <!-- #################################################### -->
+    <hr/>
+    <span id="date_heure"></span>
+    <script type="text/javascript">window.onload = date_heure('date_heure');</script><br/>
+
+
+
+     {% if dateevent!= None %}
+            <div id="couleur" style="background-color:#FFFF00">
+            Prochain événement (<b>{{ descriptionprochain }}</b>) à effectuer dans {{ dateevent }} jours et
+            {{ timeevent }} heure(s)
+            </div>
+
+    {% else %}
+            <div id="couleur" style="background-color:#FFFF00">
+            Prochain événement (<b>{{ descriptionprochain }}</b>) à effectuer aujourd'hui d'ici
+            {{ timeevent }} heure(s)
+            </div>
+    {% endif %}
+
+    <hr/>
+
+    {% for item in event %}
+        {% for key, value in item.iteritems() %}
+
+            {{ key }} : {{ value }} <br/>
+
+        {% endfor %}<br/>
+    {% endfor %}
+
+    {% endblock %}

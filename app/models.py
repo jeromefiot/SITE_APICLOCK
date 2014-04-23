@@ -13,7 +13,7 @@ class User(db.Model):
     email = db.Column(db.String(120), index = True, unique = True)
     role = db.Column(db.SmallInteger, default = ROLE_USER)
     prevenu = db.Column(db.Boolean, default = False)
-    tweeter = db.Column(db.String(40), default = '', unique = True)
+    tweeter = db.Column(db.String(40), default = 'Je ne gazouille pas')
     tweet = db.Column(db.Boolean, default = False)
     messages = db.relationship('Message', backref = 'author', lazy = 'dynamic')
     subscriptions = db.relationship('Subscription', backref = 'owner', lazy = 'dynamic')
